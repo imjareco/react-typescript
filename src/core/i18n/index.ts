@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { ITranslations } from "core/models";
 
-export default (translations: ITranslations) => {
+export default (translations: ITranslations): typeof i18n => {
 
   const resources =  { translations };
 
@@ -22,9 +22,9 @@ export default (translations: ITranslations) => {
 }
 
 
-  // react i18next special options (optional)
-  // override if needed - omit if ok with defaults
-  /*
+// react i18next special options (optional)
+// override if needed - omit if ok with defaults
+/*
   react: {
     bindI18n: 'languageChanged',
     bindI18nStore: '',
@@ -33,4 +33,4 @@ export default (translations: ITranslations) => {
     transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
     useSuspense: true,
   }
-  */
+*/
