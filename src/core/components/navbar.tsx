@@ -4,8 +4,8 @@ import { Link, useHistory } from "react-router-dom";
 
 interface INavbar {
     title: string;
-    location?: string;
-    match?: string;
+    location?: string | undefined;
+    match?: string | undefined;
 }
 
 export const Navbar: FunctionComponent<INavbar> = ({ title }) => {
