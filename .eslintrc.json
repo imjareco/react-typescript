@@ -22,11 +22,44 @@
     ],
     "rules": {
         "no-debugger": 1,
-        "no-console": ["warn", { "allow": ["warn", "error"] }],
-        "no-unused-vars": [1, { "argsIgnorePattern": "res|next|^err" }],
-        "prefer-const": ["error", { "destructuring": "all" }],
-        "quotes": [2, "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
-        "indent": ["warn", 2, { "SwitchCase": 1 }],
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "no-unused-vars": [
+            1,
+            {
+                "argsIgnorePattern": "res|next|^err"
+            }
+        ],
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "all"
+            }
+        ],
+        "quotes": [
+            2,
+            "double",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        "indent": [
+            "warn",
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/prop-types": 0,
+        "@typescript-eslint/explicit-module-boundary-types": "off",
         "react/react-in-jsx-scope": "off" // suppress errors for missing 'import React' in files        
         // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }] // allow jsx syntax in js files
     }

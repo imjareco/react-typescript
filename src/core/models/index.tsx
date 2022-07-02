@@ -1,24 +1,19 @@
-import { FunctionComponent } from "react";
-
-export interface IAppBuilder {
-    modules: IModule[];
-}
-
-export interface IApplication {
-    routes: IRoute[];
-    translations: ITranslations;
-}
-
 export interface IModule {
     key: string;
     routes: IRoute[];
-    translations: ITranslations;
+}
+
+export interface IApplication {
+    modules: IModule[];
 }
 
 export interface IRoute {
-    path: string;
-    exact: boolean;
-    component: FunctionComponent;
+    labelKey: string;
+    path?: string;
+    subpaths?: this[];
+    index?: boolean;
+    icon?: React.ReactNode;
+    element?: React.ReactNode | null;
 }
 
 export type ITranslations = {

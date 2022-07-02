@@ -1,23 +1,15 @@
-// import "core/assets/css/index.css";
-import { render, setConfig, modulesBuilder, routesBuilder, translationsBuilder } from "core/functions";
-import Application from "core/application";
-import languages from "core/translations";
-import { IAppBuilder } from "core/models";
 import reportWebVitals from "reportWebVitals";
 
-const appBuilder = ({ modules }: IAppBuilder): void => {
+import Application from "core/application";
+import { render, setConfig } from "core/functions";
+import core from "core/module";
+import home from "home/module";
+import user from "user/module";
+
+const appBuilder = (): void => {
   setConfig();
-  
-  const app = modulesBuilder(modules);
-  const routes = routesBuilder(app);
-  const translations = translationsBuilder(Object.keys(languages), app);
-  
-  render(
-    <Application
-      routes={routes}
-      translations={translations}
-    />
-  );
+    
+  render(<Application modules={[core, home, user]} />);
       
   // If you want to start measuring performance in your app, pass a function
   // to log results (for example: reportWebVitals(console.log))
