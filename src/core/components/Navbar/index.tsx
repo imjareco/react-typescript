@@ -1,3 +1,5 @@
+import { UserContext } from "core/context/UserContext";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 interface INavbar {
@@ -7,6 +9,7 @@ interface INavbar {
 }
 
 export const Navbar = ({ title }: INavbar) => {
+  const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   return (
     <>
@@ -18,8 +21,10 @@ export const Navbar = ({ title }: INavbar) => {
         <li>
           <Link to="account/profile">Account</Link>
         </li>
+        {user && <li>
+          <button onClick={() => setUser(undefined)}>Logout</button>
+        </li>}
       </ul>
     </>
   );
 }
-

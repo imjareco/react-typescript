@@ -9,6 +9,7 @@ import { Navbar } from "core/components/Navbar";
 
 import "core/sanitize/reset.css"
 import "assets/styles/custom.css";
+import UserProvider from "core/context/UserContext";
 
 const Application = ({ modules }: IApplication) => {
   const t = useTranslations();
@@ -16,8 +17,10 @@ const Application = ({ modules }: IApplication) => {
   return (
     <I18nextProvider i18n={i18n} >
       <Router>
-        <Navbar title={t("core.app.title", { app: "app" })} />
-        <RoutesProvider routes={routesBuilder(modules)} />
+        <UserProvider>
+          <Navbar title={t("core.app.title", { app: "app" })} />
+          <RoutesProvider routes={routesBuilder(modules)} />
+        </UserProvider>
       </Router>
     </I18nextProvider>
   );

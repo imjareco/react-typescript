@@ -15,3 +15,7 @@ export interface IRoute {
     icon?: React.ReactNode;
     element?: React.ReactNode | null;
 }
+
+export interface IUser {
+    name: string;
+}
