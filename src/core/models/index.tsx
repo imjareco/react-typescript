@@ -15,9 +15,3 @@ export interface IRoute {
     icon?: React.ReactNode;
     element?: React.ReactNode | null;
 }
-
-export type ITranslations = {
-    [x: string]: Record<string, unknown>;
-    en: Record<string, unknown>;
-    es: Record<string, unknown>;
-}

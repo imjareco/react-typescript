@@ -7,8 +7,8 @@ export type Langs = "en" | "es";
 const resources = { ...literals } as const;
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
-  // fallbackLng: "en",
+  lng: "es",
+  fallbackLng: "en",
   interpolation: {
     escapeValue: false,
   },

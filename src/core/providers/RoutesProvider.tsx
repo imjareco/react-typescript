@@ -12,21 +12,19 @@ const NotFound = () => <div>Not found 404</div>;
 
 const RoutesProvider: FunctionComponent<IRoutesProvider> = ({ routes }) => {
   const routeList = useMemo(() => {
-    return routes.map(({ labelKey, subpaths, ...rest }: IRoute) => <Route {...rest} key={labelKey}>
-      {subpaths?.length ? subpaths.map(({labelKey, ...subRest }) => <Route {...subRest} key={labelKey} />) : undefined}
+    return routes.map(({ labelKey, subpaths, ...props }: IRoute) => <Route {...props} key={labelKey}>
+      {subpaths?.length ? subpaths.map(({labelKey, ...props }) => <Route {...props} key={labelKey} />) : undefined}
     </Route>)
   }, [routes]);
 
   return (
-    <>
-      <Switch>
-        <Route path="/" element={<Layout />} >
-          {routeList}
-        </Route>
-        <Route path="unauthorized" element={<Unauthorized />}/>
-        <Route path="*" element={<NotFound />}/>
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/" element={<Layout />} >
+        {routeList}
+      </Route>
+      <Route path="unauthorized" element={<Unauthorized />}/>
+      <Route path="*" element={<NotFound />}/>
+    </Switch>
   );
 };
 
