@@ -4,12 +4,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { routesBuilder } from "core/functions";
 import { IApplication } from "core/models";
+import UserProvider from "core/context/UserContext";
 import RoutesProvider from "core/providers/RoutesProvider";
 import { Navbar } from "core/components/Navbar";
 
-import "core/sanitize/reset.css"
 import "assets/styles/custom.css";
-import UserProvider from "core/context/UserContext";
 
 const Application = ({ modules }: IApplication) => {
   const t = useTranslations();
