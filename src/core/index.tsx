@@ -1,6 +1,6 @@
 import reportWebVitals from "reportWebVitals";
 
-import Application from "core/application";
+import Application from "core/Application";
 import { render, setConfig } from "core/functions";
 import core from "core/module";
 import home from "home/module";

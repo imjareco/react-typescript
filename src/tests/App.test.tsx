@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Application from 'core/application';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import Application from "core/Application";
 
 
 describe("Testing Application", () => {
