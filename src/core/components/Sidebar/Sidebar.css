@@ -1,0 +1,32 @@
+.sidebar__container {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .open {
+    width: 400px;
+  }
+  
+  .sidebar__close--button {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .sidebar__content {
+    padding: 16px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar__container {padding-top: 15px;}
+    .sidebar__container a {font-size: 18px;}
+  }
